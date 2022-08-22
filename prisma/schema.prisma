@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Directory {
+  id           String    @id @default(uuid())
+  name         String
+  content      String?   @db.Text
+  isFolder     Boolean
+  lastModifier String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deletedAt    DateTime?
+  parentId     String?
+
+  parent   Directory?  @relation("DirectoryParent", fields: [parentId], references: [id])
+  children Directory[] @relation("DirectoryParent")
+
+  @@map("directories")
+}

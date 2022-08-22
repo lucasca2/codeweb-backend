@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "dist",
+    "strict": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "paths": {
+      "modules/*": [
+        "./src/modules/*"
+      ],
+      "routes/*": [
+        "./src/routes/*"
+      ],
+      "database/*": [
+        "./src/database/*"
+      ],
+      "errors/*": [
+        "./src/errors/*"
+      ],
+      "config/*": [
+        "./src/config/*"
+      ],
+      "middlewares/*": [
+        "./src/middlewares/*"
+      ]
+    }
+  }
+}
