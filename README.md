@@ -1,8 +1,7 @@
 ## CodeWeb
 
-First make sure that `node` and `docker` is installed on your computer.
-
 ### How to run?
+First make sure that `node` and `docker` is installed on your computer.
 
 **Step 1:** Install the dependencies
 
